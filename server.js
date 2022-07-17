@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
 
-mongoose.connect('mongodb+srv://Saran23:Saranm23@cluster0.89qlcus.mongodb.net/urlshortener', {
+mongoose.connect("mongodb+srv://Saran23:Saranm23@cluster0.89qlcus.mongodb.net/urlshortner", {
   useNewUrlParser: true, useUnifiedTopology: true
 })
 
@@ -30,5 +30,23 @@ app.get('/:shortUrl', async (req, res) => {
 
   res.redirect(shortUrl.full)
 })
+// function normalizePort(val) {
+//   var port = parseInt(val, 10);
 
-app.listen(5000);
+//   if (isNaN(port)) {
+//     // named pipe
+//     return val;
+//   }
+
+//   if (port >= 0) {
+//     // port number
+//     return port;
+//   }
+
+//   return false;
+// }
+
+// var port = normalizePort(process.env.PORT);
+// app.set('port', port);
+
+app.listen(5000, ()=>console.log("Server is up on:",5000));
