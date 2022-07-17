@@ -49,4 +49,5 @@ app.get('/:shortUrl', async (req, res) => {
 // var port = normalizePort(process.env.PORT);
 // app.set('port', port);
 
-app.listen(5000, ()=>console.log("Server is up on:",5000));
+const port = process.env.PORT || 4000;
+app.listen(port, ()=>console.log("Server is up on:",port));
